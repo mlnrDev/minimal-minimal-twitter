@@ -4,7 +4,6 @@ export const KeyCommunitiesButton = "communitiesButton";
 export const KeyTopicsButton = "topicsButton";
 export const KeyXPremiumButton = "xPremiumButton";
 export const KeyVerifiedOrgsButton = "verifiedOrgsButton";
-export const KeyTypefullyGrowTab = "typefullyGrowTab";
 export const KeyFollowingTimeline = "followingTimeline";
 export const KeyTrendsHomeTimeline = "trendsHomeTimeline";
 export const KeyRemoveTimelineTabs = "removeTimelineTabs";
@@ -37,7 +36,6 @@ export const KeyRemovePromotedPosts = "removePromotedPosts";
 export const KeyRemoveWhoToFollow = "removeWhoToFollow";
 export const KeyRemoveTopicsToFollow = "removeTopicsToFollow";
 export const KeyRecentMedia = "recentMedia";
-export const KeyTypefullyComposerButtons = "typefullyComposerButtons";
 export const KeyInterFont = "interFont";
 export const KeyTitleNotifications = "titleNotifications";
 export const KeyCustomCss = "customCss";
@@ -50,7 +48,6 @@ export const allSettingsKeys = [
   KeyTopicsButton,
   KeyXPremiumButton,
   KeyVerifiedOrgsButton,
-  KeyTypefullyGrowTab,
   KeyFollowingTimeline,
   KeyTrendsHomeTimeline,
   KeyRemoveTimelineTabs,
@@ -83,7 +80,6 @@ export const allSettingsKeys = [
   KeyRemoveWhoToFollow,
   KeyRemoveTopicsToFollow,
   KeyRecentMedia,
-  KeyTypefullyComposerButtons,
   KeyInterFont,
   KeyTitleNotifications,
   KeyCustomCss,
@@ -108,7 +104,6 @@ export const defaultPreferences = {
   [KeyListsButton]: "on",
   [KeyXPremiumButton]: "off",
   [KeyVerifiedOrgsButton]: "off",
-  [KeyTypefullyGrowTab]: "on",
   [KeyProfileButton]: "on",
   [KeyNavigationButtonsLabels]: "off",
   [KeyNavigationButtonsLabelsHover]: "on",
@@ -129,7 +124,6 @@ export const defaultPreferences = {
   [KeyFollowingTimeline]: "off",
   [KeyTrendsHomeTimeline]: "off",
   [KeyRecentMedia]: "off",
-  [KeyTypefullyComposerButtons]: "on",
   [KeyInterFont]: "off",
   [KeyTitleNotifications]: "on",
   [KeyCustomCss]: "",

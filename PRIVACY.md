@@ -4,4 +4,4 @@ Minimal Theme for Twitter / X does not store or collect any personal information
 
 ## Contact Information
 
-For any questions or concerns regarding the privacy policy, please send an email to support@typefully.com.
+For any questions or concerns regarding the privacy policy, please send a message to /dev/null.
