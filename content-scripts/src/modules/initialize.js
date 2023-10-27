@@ -34,7 +34,7 @@ export const addStylesheets = async () => {
   externalStylesheet.id = "mt-external-stylesheet";
 
   head.appendChild(mainStylesheet);
-  head.insertBefore(externalStylesheet);
+  head.appendChild(externalStylesheet);
 
   const mainStylesheetFromCDN = await fetch(`https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@6.0/css/main.css?t=${Date.now()}`);
   const mainText = (await mainStylesheetFromCDN.text()).trim();
@@ -58,7 +58,6 @@ export const runDocumentMutations = throttle(async () => {
     }
   }
 
-  saveCurrentReplyToLink();
   checkUrlForFollow();
   changeHideViewCounts();
   changeRecentMedia();
