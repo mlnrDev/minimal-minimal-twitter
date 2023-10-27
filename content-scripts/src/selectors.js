@@ -23,7 +23,6 @@ selectors.sidebarLinks = {
   lists: `a[href*="lists"][role="link"][aria-label]`,
   xPremium: `a[href*="blue"][role="link"][aria-label]`,
   verifiedOrgs: `a[href*="verified-orgs"][role="link"][aria-label]`,
-  analytics: `.mt-sidebar-button[aria-label="Analytics"]`,
 };
 selectors.accountSwitcherButton = `[data-testid="SideNav_AccountSwitcher_Button"]`;
 selectors.leftSidebarLabel = `${selectors.leftSidebarLinks} * div:last-child > span:only-child`;
