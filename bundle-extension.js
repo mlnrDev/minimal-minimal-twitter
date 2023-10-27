@@ -37,10 +37,6 @@ let manifest = {
 const MANIFEST_CHROME = {
   ...manifest,
   manifest_version: 3,
-  background: {
-    service_worker: "background.js",
-    type: "module",
-  },
   content_scripts: [
     {
       run_at: "document_end",
@@ -56,10 +52,8 @@ const MANIFEST_CHROME = {
     {
       resources: [
         "css/main.css",
-        "css/typefully.css",
         "fonts/inter-subset.woff2",
         "https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@5.1/css/main.css",
-        "https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@5.1/css/typefully.css",
       ],
       matches: [
         "https://twitter.com/*",
@@ -87,10 +81,6 @@ const MANIFEST_FIREFOX = {
       id: "{e7476172-097c-4b77-b56e-f56a894adca9}",
     },
   },
-  background: {
-    scripts: ["background.js"],
-    persistent: false,
-  },
   content_scripts: [
     {
       run_at: "document_idle",
@@ -104,10 +94,8 @@ const MANIFEST_FIREFOX = {
   ],
   web_accessible_resources: [
     "css/main.css",
-    "css/typefully.css",
     "fonts/inter-subset.woff2",
     "https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@5.1/css/main.css",
-    "https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@5.1/css/typefully.css",
   ],
   browser_action: {
     default_icon: {
@@ -173,10 +161,6 @@ const bundle = async (manifest, bundleDirectory) => {
     // Bundle content-scripts
     await copy("content-scripts/dist", `${bundleDirectory}/dist`);
     console.log(`🚗  Moved content_scripts to bundle.`);
-
-    // Bundle background.js
-    await copyFile("background.js", `${bundleDirectory}/background.js`);
-    console.log(`🚗  Moved background.js to bundle.`);
 
     // Bundle css
     await copy("css", `${bundleDirectory}/css`);
