@@ -35,8 +35,6 @@ import {
   KeyTransparentSearch,
   KeyTrendsHomeTimeline,
   KeyTweetButton,
-  KeyTypefullyComposerButtons,
-  KeyTypefullyGrowTab,
   KeyUnreadCountBadge,
   KeyVerifiedOrgsButton,
   KeyWriterMode,
@@ -79,7 +77,6 @@ import {
   changeTweetBorders,
   changeWhoToFollow,
 } from "./timeline";
-import { changeTypefullyComposerButtons } from "./typefully";
 import { changeWriterMode } from "./writer-mode";
 
 export const injectAllChanges = (data) => {
@@ -107,7 +104,6 @@ export const injectAllChanges = (data) => {
   changeProfileButton(data[KeyProfileButton]);
   changeXPremiumButton(data[KeyXPremiumButton]);
   changeVerifiedOrgsButton(data[KeyVerifiedOrgsButton]);
-  changeAnalyticsButton(data[KeyTypefullyGrowTab]);
 
   // Timeline
   changeFollowingTimeline(data[KeyFollowingTimeline]);
@@ -118,7 +114,6 @@ export const injectAllChanges = (data) => {
   changeWhoToFollow(data[KeyRemoveWhoToFollow]);
   changeTopicsToFollow(data[KeyRemoveTopicsToFollow]);
   changeTimelineTabs(data[KeyRemoveTimelineTabs], data[KeyWriterMode]);
-  changeTypefullyComposerButtons(data[KeyTypefullyComposerButtons]);
   changeFollowCount(data[KeyFollowCount]);
   changeReplyCount(data[KeyReplyCount]);
   changeRetweetCount(data[KeyRetweetCount]);

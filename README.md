@@ -3,8 +3,7 @@
 </p>
 
 <h1 align="center">
-  Minimal Theme for Twitter / 𝕏<br/>
-  by <a href="https://typefully.com/?ref=minimal-twitter">Typefully</a>
+  Deshittified Minimal Theme for Twitter / 𝕏<br/>
 </h1>
 
 Available on [Chrome](https://chrome.google.com/webstore/detail/pobhoodpcipjmedfenaigbeloiidbflp), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/minimaltwitter/), and [Safari](https://apps.apple.com/it/app/minimal-twitter/id1668204600) — or via [manual installation](./MANUAL_INSTALLATION.MD).
@@ -30,11 +29,3 @@ Refine and clean up the Twitter interface, and customize your experience:
 - Hide the Search Bar
 - Hide the Tweet button
 - And more...
-
-## By the makers of Typefully
-
-We also make [Typefully](https://typefully.com/?ref=minimal-twitter), which helps you craft better tweets &amp; threads, and grow faster on Twitter.
-
-<a href="https://typefully.com/?ref=minimal-twitter">
-  <img width="160px" alt="Typefully" src=".github/assets/typefully-logotype.png" />
-</a>

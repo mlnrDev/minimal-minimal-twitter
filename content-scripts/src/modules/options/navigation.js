@@ -40,7 +40,6 @@ export const changeXPremiumButton = (state) => changeSidebarSetting("xPremium", 
 export const changeTopicsButton = (state) => changeSidebarSetting("topics", state, addTopicsButton);
 export const changeCommunitiesButton = (state) => changeSidebarSetting("communities", state, addCommunitiesButton);
 export const changeListsButton = (state) => changeSidebarSetting("lists", state, addListsButton);
-export const changeAnalyticsButton = (state) => changeSidebarSetting("analytics", state, addAnalyticsButton);
 
 let tm1;
 export const addXPremiumButton = (forced) => {
@@ -53,22 +52,6 @@ export const addXPremiumButton = (forced) => {
       forced,
     });
   }, 100);
-};
-
-let tm2;
-export const addAnalyticsButton = (forced) => {
-  clearTimeout(tm2);
-  tm2 = setTimeout(() => {
-    addSidebarButton({
-      name: "Analytics",
-      forced,
-      svgAsset: svgAssets.grow.normal,
-      onClick: () => {
-        const screenName = document.querySelector(`a[role="link"][data-testid="AppTabBar_Profile_Link"]`)?.getAttribute("href").replace("/", "");
-        if (screenName) window.open(`https://typefully.com/grow?ref=minimal-twitter&mt-screen-name=${screenName}`, "_blank");
-      },
-    });
-  }, 200);
 };
 
 export const addTopicsButton = (forced) => {

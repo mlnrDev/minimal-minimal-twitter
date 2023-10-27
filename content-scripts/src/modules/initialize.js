@@ -5,7 +5,6 @@ import {
   KeyRemoveTimelineTabs,
   KeyTopicsButton,
   KeyTrendsHomeTimeline,
-  KeyTypefullyGrowTab,
   KeyWriterMode,
   KeyXPremiumButton,
 } from "../../../storage-keys";
@@ -14,7 +13,6 @@ import changeHideViewCounts from "./options/hideViewCount";
 import { addAnalyticsButton, addCommunitiesButton, addListsButton, addTopicsButton, addXPremiumButton } from "./options/navigation";
 import { changeFollowingTimeline, changeRecentMedia, changeTimelineTabs, changeTrendsHomeTimeline } from "./options/timeline";
 import { addWriterModeButton, changeWriterMode } from "./options/writer-mode";
-import { addTypefullyPlug, addTypefullyReplyPlug, saveCurrentReplyToLink } from "./typefully";
 import { extractColorsAsRootVars } from "./utilities/colors";
 import debounce from "./utilities/debounce";
 import hideRightSidebar from "./utilities/hideRightSidebar";
@@ -27,28 +25,20 @@ import throttle from "./utilities/throttle";
 export const addStylesheets = async () => {
   const head = document.querySelector("head");
   const mainStylesheet = document.createElement("link");
-  const typefullyStylesheet = document.createElement("link");
   const externalStylesheet = document.createElement("style");
 
   mainStylesheet.rel = "stylesheet";
   mainStylesheet.type = "text/css";
   mainStylesheet.href = chrome.runtime.getURL("css/main.css");
 
-  typefullyStylesheet.rel = "stylesheet";
-  typefullyStylesheet.type = "text/css";
-  typefullyStylesheet.href = chrome.runtime.getURL("css/typefully.css");
-
   externalStylesheet.id = "mt-external-stylesheet";
 
   head.appendChild(mainStylesheet);
-  head.appendChild(typefullyStylesheet);
-  head.insertBefore(externalStylesheet, typefullyStylesheet.nextSibling);
+  head.insertBefore(externalStylesheet);
 
   const mainStylesheetFromCDN = await fetch(`https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@6.0/css/main.css?t=${Date.now()}`);
-  const typefullyStylesheetFromCDN = await fetch(`https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@6.0/css/typefully.css?t=${Date.now()}`);
   const mainText = (await mainStylesheetFromCDN.text()).trim();
-  const typefullyText = (await typefullyStylesheetFromCDN.text()).trim();
-  const styleSheetText = document.createTextNode(mainText.concat("\n\n").concat(typefullyText));
+  const styleSheetText = document.createTextNode(mainText.concat("\n\n"));
 
   externalStylesheet.appendChild(styleSheetText);
 };
@@ -65,12 +55,10 @@ export const runDocumentMutations = throttle(async () => {
       changeTimelineTabs(data[KeyRemoveTimelineTabs], data[KeyWriterMode]);
       changeTrendsHomeTimeline(data[KeyTrendsHomeTimeline], data[KeyWriterMode]);
       changeFollowingTimeline(data[KeyFollowingTimeline]);
-      addTypefullyPlug();
     }
   }
 
   saveCurrentReplyToLink();
-  addTypefullyReplyPlug();
   checkUrlForFollow();
   changeHideViewCounts();
   changeRecentMedia();
@@ -119,7 +107,7 @@ export const addMutationsOnResize = () => {
 
 // Use "forced" when you want to re-add a button even if it's already there
 async function addSidebarButtons(forced) {
-  const data = await getStorage([KeyListsButton, KeyCommunitiesButton, KeyTopicsButton, KeyXPremiumButton, KeyTypefullyGrowTab]);
+  const data = await getStorage([KeyListsButton, KeyCommunitiesButton, KeyTopicsButton, KeyXPremiumButton]);
 
   if (!data) return;
 
@@ -127,5 +115,4 @@ async function addSidebarButtons(forced) {
   if (data[KeyCommunitiesButton] === "on") addCommunitiesButton(forced);
   if (data[KeyTopicsButton] === "on") addTopicsButton(forced);
   if (data[KeyXPremiumButton] === "on") addXPremiumButton(forced);
-  if (data[KeyTypefullyGrowTab] === "on") addAnalyticsButton(forced);
 }
