@@ -45,7 +45,6 @@ import { changeFollowCount, changeLikeCount, changeReplyCount, changeRetweetCoun
 import changeHideViewCounts from "./hideViewCount";
 import { changeHideSearchBar, changeInterFont, changeTitleNotifications, changeTransparentSearchBar, changeTweetButton } from "./interface";
 import {
-  changeAnalyticsButton,
   changeBookmarksButton,
   changeCommunitiesButton,
   changeExploreButton,

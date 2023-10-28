@@ -1,7 +1,9 @@
 import {
   KeyCommunitiesButton,
   KeyFollowingTimeline,
+  KeyHideViewCount,
   KeyListsButton,
+  KeyRecentMedia,
   KeyRemoveTimelineTabs,
   KeyTopicsButton,
   KeyTrendsHomeTimeline,
@@ -10,7 +12,7 @@ import {
 } from "../../../storage-keys";
 import { checkUrlForFollow } from "./check";
 import changeHideViewCounts from "./options/hideViewCount";
-import { addAnalyticsButton, addCommunitiesButton, addListsButton, addTopicsButton, addXPremiumButton } from "./options/navigation";
+import { addCommunitiesButton, addListsButton, addTopicsButton, addXPremiumButton } from "./options/navigation";
 import { changeFollowingTimeline, changeRecentMedia, changeTimelineTabs, changeTrendsHomeTimeline } from "./options/timeline";
 import { addWriterModeButton, changeWriterMode } from "./options/writer-mode";
 import { extractColorsAsRootVars } from "./utilities/colors";
@@ -46,7 +48,7 @@ export const addStylesheets = async () => {
 export const runDocumentMutations = throttle(async () => {
   extractColorsAsRootVars();
 
-  const data = await getStorage([KeyWriterMode, KeyFollowingTimeline, KeyTrendsHomeTimeline, KeyRemoveTimelineTabs]);
+  const data = await getStorage([KeyWriterMode, KeyFollowingTimeline, KeyTrendsHomeTimeline, KeyRemoveTimelineTabs, KeyHideViewCount, KeyRecentMedia]);
 
   if (data) {
     if (data[KeyWriterMode] === "on") {
@@ -55,12 +57,12 @@ export const runDocumentMutations = throttle(async () => {
       changeTimelineTabs(data[KeyRemoveTimelineTabs], data[KeyWriterMode]);
       changeTrendsHomeTimeline(data[KeyTrendsHomeTimeline], data[KeyWriterMode]);
       changeFollowingTimeline(data[KeyFollowingTimeline]);
+      changeHideViewCounts(data[KeyHideViewCount]);
+      changeRecentMedia(data[KeyRecentMedia]);
     }
   }
 
   checkUrlForFollow();
-  changeHideViewCounts();
-  changeRecentMedia();
   hideRightSidebar();
   addSmallerSearchBarStyle();
 

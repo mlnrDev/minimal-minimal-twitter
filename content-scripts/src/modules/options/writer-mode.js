@@ -129,7 +129,7 @@ export const addWriterModeButton = async (scheduleButton) => {
     writerModeButton.remove();
     return;
   } else {
-    scheduleButton.parentNode.appendChild(writerModeButton);
+    scheduleButton.parentNode.parentNode.appendChild(writerModeButton);
 
     addStyles(
       "writer-mode-composer-button-style",

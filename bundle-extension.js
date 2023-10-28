@@ -1,6 +1,6 @@
 import { exec } from "child_process";
 import { copy } from "fs-extra";
-import { copyFile, rm, writeFile } from "fs/promises";
+import { rm, writeFile } from "fs/promises";
 import process from "process";
 import readline from "readline";
 import zipper from "zip-local";
@@ -53,7 +53,7 @@ const MANIFEST_CHROME = {
       resources: [
         "css/main.css",
         "fonts/inter-subset.woff2",
-        "https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@5.1/css/main.css",
+        "https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@6.0/css/main.css",
       ],
       matches: [
         "https://twitter.com/*",
@@ -95,7 +95,7 @@ const MANIFEST_FIREFOX = {
   web_accessible_resources: [
     "css/main.css",
     "fonts/inter-subset.woff2",
-    "https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@5.1/css/main.css",
+    "https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@6.0/css/main.css",
   ],
   browser_action: {
     default_icon: {
