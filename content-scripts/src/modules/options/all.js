@@ -22,7 +22,6 @@ import {
   KeyRemoveTimelineTabs,
   KeyRemoveTopicsToFollow,
   KeyRemoveTweetBorders,
-  KeyRemoveWhoToFollow,
   KeyReplyCount,
   KeyRetweetCount,
   KeySearchBar,
@@ -74,7 +73,6 @@ import {
   changeTopicsToFollow,
   changeTrendsHomeTimeline,
   changeTweetBorders,
-  changeWhoToFollow,
 } from "./timeline";
 import { changeWriterMode } from "./writer-mode";
 
@@ -110,7 +108,6 @@ export const injectAllChanges = (data) => {
   changeRecentMedia(data[KeyRecentMedia]);
   changeTrendsHomeTimeline(data[KeyTrendsHomeTimeline], data[KeyWriterMode]);
   changePromotedPosts(data[KeyRemovePromotedPosts]);
-  changeWhoToFollow(data[KeyRemoveWhoToFollow]);
   changeTopicsToFollow(data[KeyRemoveTopicsToFollow]);
   changeTimelineTabs(data[KeyRemoveTimelineTabs], data[KeyWriterMode]);
   changeFollowCount(data[KeyFollowCount]);

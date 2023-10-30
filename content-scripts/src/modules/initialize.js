@@ -10,11 +10,11 @@ import {
   KeyWriterMode,
   KeyXPremiumButton,
 } from "../../../storage-keys";
-import { checkUrlForFollow } from "./check";
 import changeHideViewCounts from "./options/hideViewCount";
 import { addCommunitiesButton, addListsButton, addTopicsButton, addXPremiumButton } from "./options/navigation";
 import { changeFollowingTimeline, changeRecentMedia, changeTimelineTabs, changeTrendsHomeTimeline } from "./options/timeline";
 import { addWriterModeButton, changeWriterMode } from "./options/writer-mode";
+import addStyleSheet from "./utilities/addStyleSheet";
 import { extractColorsAsRootVars } from "./utilities/colors";
 import debounce from "./utilities/debounce";
 import hideRightSidebar from "./utilities/hideRightSidebar";
@@ -25,24 +25,12 @@ import throttle from "./utilities/throttle";
 
 // Function to add main stylesheet
 export const addStylesheets = async () => {
-  const head = document.querySelector("head");
-  const mainStylesheet = document.createElement("link");
-  const externalStylesheet = document.createElement("style");
+  addStyleSheet("main", chrome.runtime.getURL("css/main.css"));
 
-  mainStylesheet.rel = "stylesheet";
-  mainStylesheet.type = "text/css";
-  mainStylesheet.href = chrome.runtime.getURL("css/main.css");
-
-  externalStylesheet.id = "mt-external-stylesheet";
-
-  head.appendChild(mainStylesheet);
-  head.appendChild(externalStylesheet);
-
-  const mainStylesheetFromCDN = await fetch(`https://cdn.jsdelivr.net/gh/typefully/minimal-twitter@6.0/css/main.css?t=${Date.now()}`);
+  // Load cached CSS
+  const mainStylesheetFromCDN = await fetch("https://raw.githubusercontent.com/typefully/minimal-twitter/main/css/main.css");
   const mainText = (await mainStylesheetFromCDN.text()).trim();
-  const styleSheetText = document.createTextNode(mainText.concat("\n\n"));
-
-  externalStylesheet.appendChild(styleSheetText);
+  addStyleSheet("external", null, mainText.concat("\n\n"));
 };
 
 export const runDocumentMutations = throttle(async () => {
@@ -62,12 +50,9 @@ export const runDocumentMutations = throttle(async () => {
     }
   }
 
-  checkUrlForFollow();
   hideRightSidebar();
   addSmallerSearchBarStyle();
-
-  const scheduleButton = document.querySelector('div[data-testid="scheduleOption"]');
-  if (scheduleButton) addWriterModeButton(scheduleButton);
+  addWriterModeButton();
 
   return;
 }, 50);

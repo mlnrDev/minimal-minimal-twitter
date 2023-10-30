@@ -4,27 +4,27 @@ const selectors = {};
 selectors.mainWrapper = `main[role="main"]`;
 selectors.mainColumn = `[data-testid="primaryColumn"]`;
 selectors.topHeader = `${selectors.mainColumn} > div > div:nth-of-type(1)`;
-selectors.timelineTabs = `${selectors.mainColumn} > div > div:nth-of-type(1) > div > div > nav:only-child[role="navigation"]`;
+selectors.timelineTabs = `${selectors.mainColumn} > div:first-child > div:first-child > div:first-child > div:only-child > div:only-child`;
 selectors.leftSidebar = `header[role="banner"]`;
 selectors.leftSidebarLinks = `${selectors.leftSidebar} nav[role="navigation"]`;
 selectors.leftSidebarUnreadBadge = `${selectors.leftSidebarLinks} a svg + div[aria-label]:only-of-type`;
 selectors.sidebarLink = `[role="link"][aria-label]`
 selectors.sidebarLinks = {
   logo: `${selectors.leftSidebar} div:first-child > div:first-child div:first-child > div:first-child > h1:only-child[role="heading"]`,
-  home: `[data-testid="AppTabBar_Home_Link"]`,
-  explore: `[data-testid="AppTabBar_Explore_Link"]`,
-  notifications: `[data-testid="AppTabBar_Notifications_Link"]`,
-  messages: `[data-testid="AppTabBar_DirectMessage_Link"]`,
-  bookmarks: `a[href*="bookmarks"]`,
-  articles: `a[href*="i/articles"]`,
-  topics: `a[href*=topics]`,
-  circles: `a[href*=circles]`,
-  communities: `a[href*=communities]`,
-  profile: `[data-testid="AppTabBar_Profile_Link"]`,
-  lists: `a[href*="lists"]${selectors.sidebarLink}`,
-  xPremium: `a[href*="twitter_blue"]${selectors.sidebarLink}`,
-  verifiedOrgs: `a[href*="verified-orgs"]${selectors.sidebarLink}`,
-  verifiedChoose: `a[href*="verified-choose"]${selectors.sidebarLink}`,
+  home: `${selectors.leftSidebar} [data-testid="AppTabBar_Home_Link"]`,
+  explore: `${selectors.leftSidebar} [data-testid="AppTabBar_Explore_Link"]`,
+  notifications: `${selectors.leftSidebar} [data-testid="AppTabBar_Notifications_Link"]`,
+  messages: `${selectors.leftSidebar} [data-testid="AppTabBar_DirectMessage_Link"]`,
+  bookmarks: `${selectors.leftSidebar} a[href*="bookmarks"]`,
+  articles: `${selectors.leftSidebar} a[href*="i/articles"]`,
+  topics: `${selectors.leftSidebar} a[href*=topics]`,
+  circles: `${selectors.leftSidebar} a[href*=circles]`,
+  communities: `${selectors.leftSidebar} a[href*=communities]`,
+  profile: `${selectors.leftSidebar} [data-testid="AppTabBar_Profile_Link"]`,
+  lists: `${selectors.leftSidebar} a[href*="lists"]${selectors.sidebarLink}`,
+  xPremium: `${selectors.leftSidebar} a[href*="twitter_blue"]${selectors.sidebarLink}`,
+  verifiedOrgs: `${selectors.leftSidebar} a[href*="verified-orgs"]${selectors.sidebarLink}`,
+  verifiedChoose: `${selectors.leftSidebar} a[href*="verified-choose"]${selectors.sidebarLink}`,
 };
 selectors.accountSwitcherButton = `[data-testid="SideNav_AccountSwitcher_Button"]`;
 selectors.leftSidebarLabel = `${selectors.leftSidebarLinks} * div:last-child > span:only-child`;

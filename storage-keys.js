@@ -33,7 +33,6 @@ export const KeyTweetButton = "tweetButton";
 export const KeySearchBar = "searchBar";
 export const KeyTransparentSearch = "transparentSearch";
 export const KeyRemovePromotedPosts = "removePromotedPosts";
-export const KeyRemoveWhoToFollow = "removeWhoToFollow";
 export const KeyRemoveTopicsToFollow = "removeTopicsToFollow";
 export const KeyRecentMedia = "recentMedia";
 export const KeyInterFont = "interFont";
@@ -77,7 +76,6 @@ export const allSettingsKeys = [
   KeySearchBar,
   KeyTransparentSearch,
   KeyRemovePromotedPosts,
-  KeyRemoveWhoToFollow,
   KeyRemoveTopicsToFollow,
   KeyRecentMedia,
   KeyInterFont,
@@ -118,7 +116,6 @@ export const defaultPreferences = {
   [KeySearchBar]: "on",
   [KeyTransparentSearch]: "off",
   [KeyRemovePromotedPosts]: "on",
-  [KeyRemoveWhoToFollow]: "on",
   [KeyRemoveTopicsToFollow]: "on",
   [KeyRemoveTimelineTabs]: "off",
   [KeyFollowingTimeline]: "off",
@@ -127,5 +124,5 @@ export const defaultPreferences = {
   [KeyInterFont]: "off",
   [KeyTitleNotifications]: "on",
   [KeyCustomCss]: "",
-  [KeyHideViewCount]: "on",
+  [KeyHideViewCount]: "off",
 };
