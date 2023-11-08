@@ -3,7 +3,6 @@ export const KeyListsButton = "listsButton";
 export const KeyCommunitiesButton = "communitiesButton";
 export const KeyTopicsButton = "topicsButton";
 export const KeyXPremiumButton = "xPremiumButton";
-export const KeyVerifiedOrgsButton = "verifiedOrgsButton";
 export const KeyFollowingTimeline = "followingTimeline";
 export const KeyTrendsHomeTimeline = "trendsHomeTimeline";
 export const KeyRemoveTimelineTabs = "removeTimelineTabs";
@@ -46,7 +45,6 @@ export const allSettingsKeys = [
   KeyCommunitiesButton,
   KeyTopicsButton,
   KeyXPremiumButton,
-  KeyVerifiedOrgsButton,
   KeyFollowingTimeline,
   KeyTrendsHomeTimeline,
   KeyRemoveTimelineTabs,
@@ -101,7 +99,6 @@ export const defaultPreferences = {
   [KeyTopicsButton]: "off",
   [KeyListsButton]: "on",
   [KeyXPremiumButton]: "off",
-  [KeyVerifiedOrgsButton]: "off",
   [KeyProfileButton]: "on",
   [KeyNavigationButtonsLabels]: "off",
   [KeyNavigationButtonsLabelsHover]: "on",

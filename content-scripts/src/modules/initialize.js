@@ -100,5 +100,4 @@ async function addSidebarButtons(forced) {
   if (data[KeyListsButton] === "on") addListsButton(forced);
   if (data[KeyCommunitiesButton] === "on") addCommunitiesButton(forced);
   if (data[KeyTopicsButton] === "on") addTopicsButton(forced);
-  if (data[KeyXPremiumButton] === "on") addXPremiumButton(forced);
 }

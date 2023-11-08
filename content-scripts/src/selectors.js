@@ -23,8 +23,6 @@ selectors.sidebarLinks = {
   profile: `${selectors.leftSidebar} [data-testid="AppTabBar_Profile_Link"]`,
   lists: `${selectors.leftSidebar} a[href*="lists"]${selectors.sidebarLink}`,
   xPremium: `${selectors.leftSidebar} a[href*="verified"]${selectors.sidebarLink}`,
-  verifiedOrgs: `${selectors.leftSidebar} a[href*="verified-orgs"]${selectors.sidebarLink}`,
-  verifiedChoose: `${selectors.leftSidebar} a[href*="verified-choose"]${selectors.sidebarLink}`,
 };
 selectors.accountSwitcherButton = `[data-testid="SideNav_AccountSwitcher_Button"]`;
 selectors.leftSidebarLabel = `${selectors.leftSidebarLinks} * div:last-child > span:only-child`;

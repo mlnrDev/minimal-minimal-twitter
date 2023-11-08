@@ -38,14 +38,7 @@ export const changeProfileButton = (state) => changeSidebarSetting("profile", st
 export const changeTopicsButton = (state) => changeSidebarSetting("topics", state, addTopicsButton);
 export const changeCommunitiesButton = (state) => changeSidebarSetting("communities", state, addCommunitiesButton);
 export const changeListsButton = (state) => changeSidebarSetting("lists", state, addListsButton);
-export const changeVerifiedOrgsButton = (state) => {
-  changeSidebarSetting("verifiedOrgs", state);
-  changeSidebarSetting("verifiedChoose", state);
-};
-export const changeXPremiumButton = (state) => {
-  changeSidebarSetting("xPremium", state);
-  changeSidebarSetting("verifiedChoose", state);
-};
+export const changeXPremiumButton = (state) => changeSidebarSetting("xPremium", state);
 
 export const addTopicsButton = (forced) => {
   addSidebarButton({

@@ -59,7 +59,6 @@ import {
   changeTopArticlesButton,
   changeTopicsButton,
   changeUnreadCountBadge,
-  changeVerifiedOrgsButton,
   changeXPremiumButton,
 } from "./navigation";
 import {
@@ -100,7 +99,6 @@ export const injectAllChanges = (data) => {
   changeListsButton(data[KeyListsButton]);
   changeProfileButton(data[KeyProfileButton]);
   changeXPremiumButton(data[KeyXPremiumButton]);
-  changeVerifiedOrgsButton(data[KeyVerifiedOrgsButton]);
 
   // Timeline
   changeFollowingTimeline(data[KeyFollowingTimeline]);
