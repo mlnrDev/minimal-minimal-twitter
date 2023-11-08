@@ -22,7 +22,7 @@ selectors.sidebarLinks = {
   communities: `${selectors.leftSidebar} a[href*=communities]`,
   profile: `${selectors.leftSidebar} [data-testid="AppTabBar_Profile_Link"]`,
   lists: `${selectors.leftSidebar} a[href*="lists"]${selectors.sidebarLink}`,
-  xPremium: `${selectors.leftSidebar} a[href*="twitter_blue"]${selectors.sidebarLink}`,
+  xPremium: `${selectors.leftSidebar} a[href*="verified"]${selectors.sidebarLink}`,
   verifiedOrgs: `${selectors.leftSidebar} a[href*="verified-orgs"]${selectors.sidebarLink}`,
   verifiedChoose: `${selectors.leftSidebar} a[href*="verified-choose"]${selectors.sidebarLink}`,
 };
