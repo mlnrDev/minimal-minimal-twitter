@@ -4,7 +4,7 @@ const selectors = {};
 selectors.mainWrapper = `main[role="main"]`;
 selectors.mainColumn = `[data-testid="primaryColumn"]`;
 selectors.topHeader = `${selectors.mainColumn} > div > div:nth-of-type(1)`;
-selectors.timelineTabs = `${selectors.mainColumn} > div:first-child > div:first-child > div:first-child > div:only-child > div:only-child`;
+selectors.timelineTabs = `${selectors.mainColumn} > div:first-child > div:first-child > div:first-child > div:only-child > nav:only-child`;
 selectors.leftSidebar = `header[role="banner"]`;
 selectors.leftSidebarLinks = `${selectors.leftSidebar} nav[role="navigation"]`;
 selectors.leftSidebarUnreadBadge = `${selectors.leftSidebarLinks} a svg + div[aria-label]:only-of-type`;
@@ -23,6 +23,7 @@ selectors.sidebarLinks = {
   profile: `${selectors.leftSidebar} [data-testid="AppTabBar_Profile_Link"]`,
   lists: `${selectors.leftSidebar} a[href*="lists"]${selectors.sidebarLink}`,
   xPremium: `${selectors.leftSidebar} a[href*="verified"]${selectors.sidebarLink}`,
+  grok: `${selectors.leftSidebar} a[href*="grok"]${selectors.sidebarLink}`,
 };
 selectors.accountSwitcherButton = `[data-testid="SideNav_AccountSwitcher_Button"]`;
 selectors.leftSidebarLabel = `${selectors.leftSidebarLinks} * div:last-child > span:only-child`;

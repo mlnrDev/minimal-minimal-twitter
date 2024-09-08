@@ -1,3 +1,7 @@
+// The html structure of buttons (i.e. if it has a label or not) changes based on viewport size,
+// so when adding sidebar buttons on subsequent renders after page load, we used the `forced`
+// parameter to re-add the element so that it's displayed correctly.
+
 export const addSidebarButton = ({ name, href, userHref, onClick, svgAsset, forced }) => {
   const existingElement = document.querySelector(`nav[role="navigation"] > [aria-label="${name}"]`);
 
@@ -11,7 +15,9 @@ export const addSidebarButton = ({ name, href, userHref, onClick, svgAsset, forc
   if (existingElement) {
     if (forced) {
       existingElement.replaceWith(newNode);
-    } // Otherwise it's early returned before
+    } else {
+      newNode.remove();
+    }
   } else {
     profileNode.insertAdjacentElement("beforebegin", newNode);
   }
