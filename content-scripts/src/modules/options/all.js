@@ -36,7 +36,6 @@ import {
   KeyTrendsHomeTimeline,
   KeyTweetButton,
   KeyUnreadCountBadge,
-  KeyVerifiedOrgsButton,
   KeyWriterMode,
   KeyXPremiumButton,
 } from "../../../../storage-keys";

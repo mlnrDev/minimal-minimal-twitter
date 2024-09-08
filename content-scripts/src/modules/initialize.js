@@ -11,7 +11,7 @@ import {
   KeyXPremiumButton,
 } from "../../../storage-keys";
 import changeHideViewCounts from "./options/hideViewCount";
-import { addCommunitiesButton, addListsButton, addTopicsButton, addXPremiumButton } from "./options/navigation";
+import { addCommunitiesButton, addListsButton, addTopicsButton } from "./options/navigation";
 import { changeFollowingTimeline, changeRecentMedia, changeTimelineTabs, changeTrendsHomeTimeline } from "./options/timeline";
 import { addWriterModeButton, changeWriterMode } from "./options/writer-mode";
 import addStyleSheet from "./utilities/addStyleSheet";
